@@ -1,0 +1,16 @@
+# vim ft=yaml
+# CI on Windows via appveyor
+
+os: Visual Studio 2015
+
+install:
+  # Install commands
+
+build_script:
+  - nmake -f Makefile.win
+
+test_script:
+  - .\x86report
+
+artifacts:
+  - path: x86report.exe
