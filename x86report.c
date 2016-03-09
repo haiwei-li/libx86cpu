@@ -9,6 +9,7 @@
 
 #define BINT(x) (x ? "True" : "False")
 
+
 int main(int argc, char **argv)
 {
     int ok;
@@ -20,41 +21,28 @@ int main(int argc, char **argv)
         printf("CPU does not have cpuid instruction\n");
         exit(-1);
     }
-    printf("x86cpu report\n"
-            "-------------\n"
-            "brand            : %s\n"
-            "vendor           : %s\n"
-            "model (display)  : %d\n"
-            "family (display) : %d\n"
-            "model            : %d\n"
-            "family           : %d\n"
-            "extended model   : %d\n"
-            "extended family  : %d\n"
-            "stepping         : %d\n"
-            "processor type   : %d\n"
-            "signature        : %d\n"
-            "MMX              : %s\n"
-            "3DNow!           : %s\n"
-            "SSE              : %s\n"
-            "SSE2             : %s\n"
-            "SSE3             : %s\n"
-            "SSSE3            : %s\n"
-            "SSE4.1           : %s\n"
-            "SSE4.2           : %s\n"
-            "supports AVX     : %s\n"
-            "supports AVX2    : %s\n",
-        i.brand, i.vendor,
-        i.model_display, i.family_display,
-        i.model, i.family,
-        i.extended_model, i.extended_family,
-        i.stepping, i.processor_type,
-        i.signature,
-        BINT(i.has_mmx), BINT(i.has_3dnow),
-        BINT(i.has_sse), BINT(i.has_sse2),
-        BINT(i.has_sse3), BINT(i.has_ssse3),
-        BINT(i.has_sse4_1), BINT(i.has_sse4_2),
-        BINT(i.supports_avx),
-        BINT(i.supports_avx2)
-            );
+    printf("x86cpu report\n");
+    printf("-------------\n");
+    printf("brand            : %s\n", i.brand);
+    printf("vendor           : %s\n", i.vendor);
+    printf("model (display)  : %d\n", i.model_display);
+    printf("family (display) : %d\n", i.family_display);
+    printf("model            : %d\n", i.model);
+    printf("family           : %d\n", i.family);
+    printf("extended model   : %d\n", i.extended_model);
+    printf("extended family  : %d\n", i.extended_family);
+    printf("stepping         : %d\n", i.stepping);
+    printf("processor type   : %d\n", i.processor_type);
+    printf("signature        : %d\n", i.signature);
+    printf("MMX              : %s\n", BINT(i.has_mmx));
+    printf("3DNow!           : %s\n", BINT(i.has_3dnow));
+    printf("SSE              : %s\n", BINT(i.has_sse));
+    printf("SSE2             : %s\n", BINT(i.has_sse2));
+    printf("SSE3             : %s\n", BINT(i.has_sse3));
+    printf("SSSE3            : %s\n", BINT(i.has_ssse3));
+    printf("SSE4.1           : %s\n", BINT(i.has_sse4_1));
+    printf("SSE4.2           : %s\n", BINT(i.has_sse4_2));
+    printf("supports AVX     : %s\n", BINT(i.supports_avx));
+    printf("supports AVX2    : %s\n", BINT(i.supports_avx2));
     exit(0);
 }
