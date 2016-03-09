@@ -1,0 +1,20 @@
+# Run with
+#   nmake -f Makefile.win
+CFLAGS = -I.
+DEPS = cpuid.h cpuinfo.h
+EXE_FILE = x86report.exe
+SOURCES = x86report.c cpuinfo.c cpuid.c os_restores_ymm.c
+OBJECTS = $(SOURCES:.c=.obj)
+
+all: $(EXE_FILE)
+
+.c.obj:
+	$(CC) -c $(CFLAGS) $*.c
+
+$(OBJECTS): $(DEPS)
+
+$(EXE_FILE): $(OBJECTS)
+	$(CC) /Fe$@ $(OBJECTS)
+
+clean :
+	del *.obj $(EXE_FILE)

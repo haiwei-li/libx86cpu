@@ -14,10 +14,15 @@ to see if the OS / CPU supports AVX instructions.
 There is a Python / CLI interface to this code at `x86cpu
 <https://github.com/matthew-brett/x86cpu>`_.
 
-To use this library to show a report on your CPU::
+You can use this library to print out a report on your CPU.  On Unix::
 
     make
     ./x86report
+
+On Windows::
+
+    nmake -f Makefile.win
+    .\x86report
 
 This might show something like::
 
@@ -44,6 +49,3 @@ This might show something like::
     SSE4.2           : True
     supports AVX     : True
     supports AVX2    : True
-
-The code will build on Windows, but I haven't yet got round to adding a
-Windows make file.
