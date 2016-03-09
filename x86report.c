@@ -9,7 +9,7 @@
 
 #define BINT(x) (x ? "True" : "False")
 
-int main(int argc, void* argv)
+int main(int argc, char **argv)
 {
     int ok;
     cpu_info_t i;
