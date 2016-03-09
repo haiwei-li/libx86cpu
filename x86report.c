@@ -1,5 +1,5 @@
 /*
- * Reporting information for reporting on CPU capabilities
+ * Reporting information on CPU capabilities
  */
 
 #include <stdio.h>

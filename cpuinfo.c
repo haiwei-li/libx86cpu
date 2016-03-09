@@ -73,7 +73,6 @@ int collect_info(cpu_info_t *info)
      * https://software.intel.com/en-us/blogs/2011/04/14/is-avx-enabled/
      */
     info->supports_avx = os_supports_avx(info->reg1);
-    info->supports_avx2 = 0;
     info->supports_avx2 = (
             info->supports_avx &
             info->has_reg7 &
