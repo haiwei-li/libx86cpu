@@ -49,3 +49,6 @@ This might show something like::
     SSE4.2           : True
     supports AVX     : True
     supports AVX2    : True
+
+You may find a compiled version of ``x86report.exe`` at
+https://ci.appveyor.com/project/matthew-brett/libx86cpu/build/artifacts .
