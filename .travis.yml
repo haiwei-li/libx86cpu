@@ -1,0 +1,12 @@
+language: c
+
+matrix:
+    include:
+        - dist: precise
+        - dist: trusty
+
+before_install:
+  - make
+
+script:
+  - ./x86report
